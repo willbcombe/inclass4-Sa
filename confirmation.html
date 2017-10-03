@@ -5,6 +5,28 @@
     <title>Confirmation Page</title>
 </head>
 <body>
-    this is the confirmation page
+    <h3>Thanks</h3>
+    <h5>Your Request Has Been Sent To:</h5>
+    <div>
+        <div style="display:flex; flex-direction:column; width:25%;">
+        <label for="company">Company</label>
+        <input id="company"></input>
+        <label for="product">Product</label>
+        <input id="product"></input>
+        <label for="qty">Amount</label>
+        <input id="qty"></input>
+        </div>
+        <p>You should hear back from them about 3 days from now:<span class="reply"</span> </p>
+    </div>
+    <script>
+        
+        var today = new Date();
+        var replyDate = new Date();
+        replyDate.setDate(today.getDate() + 3);
+        replyDate.toISOString().slice(0,10);
+        let reply = document.querySelector('.reply');
+        reply.innerHTML = replyDate.toISOString().slice(0,10);;
+        //alert( replyDate.toISOString().slice(0,10));
+    </script>
 </body>
 </html>
